@@ -6,4 +6,4 @@ app.get('/', function(req, res) {
   console.log('ok');
 });
 
-app.listen(3000);
+module.exports = app;
