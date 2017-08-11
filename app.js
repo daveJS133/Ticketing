@@ -5,4 +5,10 @@ app.get('/', function(req, res) {
   res.send('200');
 });
 
+app.get('/events', function(req, res) {
+  res.send('200');
+});
+
+
+
 module.exports = app;

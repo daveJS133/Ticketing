@@ -13,3 +13,13 @@ describe  ('Requests to the root path', function(){
     });
   });
 });
+
+describe('Listing events on /events', function () {
+  it('Returns 200 status code', function (done) {
+    request(app)
+    .get('/events')
+    .expect('200', done);
+  });
+});
+
+

@@ -11,7 +11,7 @@
     "supertest": "^3.0.0"
   },
   "scripts": {
-    "test": "mocha ./specs/**"
+    "test": "mocha -w ./** ./specs/**"
   },
   "author": "",
   "license": "ISC"
