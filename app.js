@@ -2,11 +2,11 @@ var express = require('express');
 var app = express();
 
 app.get('/', function(req, res) {
-  res.send('200');
+  res.send('OK');
 });
 
 app.get('/events', function(req, res) {
-  res.send('200');
+  res.json('OK');
 });
 
 
