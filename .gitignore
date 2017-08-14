@@ -1,2 +1,2 @@
-node_modules
-./server/secretKey.js
+node_modules,
+server/secretKey.js
