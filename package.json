@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "express": "^4.15.4"
+    "angular": "^1.6.5",
+    "express": "^4.15.4",
+    "hmacsha1": "^1.0.0",
+    "mongo": "^0.1.0",
+    "mongoose": "^4.11.6"
   },
   "devDependencies": {
     "mocha": "^3.5.0",
