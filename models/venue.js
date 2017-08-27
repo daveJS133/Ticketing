@@ -9,7 +9,7 @@ venueSchema = new mongoose.Schema(
   code:{type:String, required: true},
   description:{type:String, required: true},
   disabled_description:{type:String, required: true},
-  email:{type:{type:String},
+  email:{type:String},
   fax:{type:String},
   has_bar:{type:Boolean, required:true},
   has_booking_over_card:{type:Boolean, required:true},
@@ -20,8 +20,8 @@ venueSchema = new mongoose.Schema(
   phone:{type:String, required: true},
   position:
   {
-    {type:Number, required:true},
-    {type:Number, required:true}
+    lat:{type:Number, required:true},
+    lon:{type:Number, required:true}
   },
 
   post_code:{type:String, required: true},
@@ -29,12 +29,10 @@ venueSchema = new mongoose.Schema(
 
 
   performance_spaces:
-  [ id: 
-  {
+  [{
    type: mongoose.Schema.Types.ObjectId,
    ref: "performanceSpace"
- }
- ]
+ }]
 
 });
 

@@ -1,5 +1,6 @@
 var mongoose = require("mongoose");
 
+
 var eventSchema = new mongoose.Schema({
   age_category:{type:String, required: true},
   artist:{type:String, required: true},
@@ -60,7 +61,7 @@ var eventSchema = new mongoose.Schema({
 
   {
    type: mongoose.Schema.Types.ObjectId,
-   ref: Venue.performance_space
+   ref: 'PerformanceSpace'
  },
 
  performances:
@@ -86,8 +87,8 @@ url:{type:String, required:true},
 venue:
 {
  type: mongoose.Schema.Types.ObjectId,
- ref: Venue
-}
+ ref: 'Venue'
+},
 
 warnings:{type:String},
 website:{type:String, required: true}

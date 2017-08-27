@@ -6,17 +6,17 @@ var urlBuilder = require('./urlBuilder');
 var requestTime = require('./requestTime');
 var initial = true;
 
-checkapi(initial);
+checkapi(true, initial);
 
 setInterval(function(){
   console.log('running interval');
-  checkapi(this.initial);
+  checkapi(true, this.initial);
 }.bind({initial:initial}), 8.64e+7, initial);
 
 
-function checkapi(initial) {
+function checkapi(isAuto, initial) {
 
-  let path = urlBuilder([], requestTime.check(initial));
+  let path = urlBuilder([], isAuto, requestTime.check(initial));
   let options = {
     hostname: 'api.edinburghfestivalcity.com',
     port: '80',

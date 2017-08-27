@@ -2,7 +2,7 @@ var hmacsha1 = require('hmacsha1');
 
 
 
-function build (queries, requestTime) {
+function build (queries, isAuto, requestTime) {
   const secretKey = require('secretKey');
   const privateKey = Object.freeze(secretKey);
   const publicKey = Object.freeze('CgdAh5HhEAtCIihS');
@@ -13,6 +13,10 @@ function build (queries, requestTime) {
     queries.forEach(function(element){
       path += ('&' + element);
     });
+  }
+
+  if (isAuto == true){
+    path+='&size=100';
   }
 
   if(requestTime !== null){
