@@ -1,30 +1,31 @@
-var hmacsha1 = require('hmacsha1');
-
-
+var crypto = require('crypto');
 
 function build (queries, isAuto, requestTime) {
   const secretKey = require('./secretKey');
-  const privateKey = Object.freeze(secretKey);
-  const publicKey = Object.freeze('CgdAh5HhEAtCIihS');
-  let path = '/events/?key=' +publicKey;
+  const privateKey = String(
+    Object.freeze(secretKey)
+    );
+  const publicKey = String(Object.freeze('CgdAh5HhEAtCIihS'));
+  let path = '/events?key=' +publicKey;
 
 
   if (queries.length !== 0){
     queries.forEach(function(element){
-      path += ('&' + element);
+      path += ('&' + String(element));
     });
-  }
+  };
 
   if (isAuto == true){
     path+='&size=100';
   }
 
   if(requestTime !== null){
-    path+= '&modified_from='+requestTime;
-  }
-
-
-  let hash = hmacsha1(privateKey, path);
+    path+= '&modified_from='+String(requestTime);
+  };
+  var hash = crypto.createHmac('sha1', privateKey)
+  .update(path)
+  .digest('hex');
+  console.log(hash);
   return path+'&signature='+hash;
 }
 

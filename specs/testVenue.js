@@ -20,7 +20,7 @@ testVenue =
   {
     lat:55.945683,
     lon:-3.181118
-  }
+  },
 
   post_code:"EH8 9RR",
   web_address:"www.zoofestival.co.uk"
