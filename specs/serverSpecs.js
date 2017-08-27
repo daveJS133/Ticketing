@@ -6,7 +6,7 @@ describe('Server Accessing API', function () {
   it('Returns 200 status code', function (done) {
     request(server)
     .checkApi(true, true)
-    .expect(res.statusCode == '200', done);
+    .expect(res.status == '200', done);
   });
 
   it('Response returns ok', function (done) {

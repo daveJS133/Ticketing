@@ -6,10 +6,12 @@ var urlBuilder = require('./urlBuilder');
 var requestTime = require('./requestTime');
 var initial = true;
 
+app.use('/api', api);
+
 checkApi(true, initial);
 
 setInterval(function(){
-  checkapi(this.initial);
+  checkapi(true, this.initial);
 }.bind({initial:initial}), 8.64e+7, initial);
 
 
