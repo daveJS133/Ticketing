@@ -4,8 +4,8 @@ var server = require('../server/server');
 
 describe('Server Accessing API', function () {
   it('Returns 200 status code', function (done) {
-    
-    server.checkApi(true, true)
+    request(server)
+    .checkApi(true, true)
     .expect(res.statusCode == '200', done);
   });
 
