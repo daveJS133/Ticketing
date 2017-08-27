@@ -1,6 +1,6 @@
 
 module.exports = {
-  getRequestTime:function (initial) {
+  checkInitial:function (initial) {
 
     if(initial == true){
       initial = false;
@@ -13,7 +13,7 @@ module.exports = {
 
   getTimeStamp:function (){
     return Math.floor(Date.now().toISOString());
-  };
+  }
 }
 
 

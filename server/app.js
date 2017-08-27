@@ -16,7 +16,7 @@ setInterval(function(){
 
 function checkapi(isAuto, initial) {
 
-  let path = urlBuilder([], isAuto, requestTime.check(initial));
+  let path = urlBuilder([], isAuto, requestTime.checkInitial(initial));
   let options = {
     hostname: 'api.edinburghfestivalcity.com',
     port: '80',
