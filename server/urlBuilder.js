@@ -3,7 +3,7 @@ var hmacsha1 = require('hmacsha1');
 
 
 function build (queries, isAuto, requestTime) {
-  const secretKey = require('secretKey');
+  const secretKey = require('./secretKey');
   const privateKey = Object.freeze(secretKey);
   const publicKey = Object.freeze('CgdAh5HhEAtCIihS');
   let path = '/events/?key=' +publicKey;
