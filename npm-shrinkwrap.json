@@ -2,6 +2,16 @@
   "name": "ticket",
   "version": "1.0.0",
   "dependencies": {
+    "@uirouter/angularjs": {
+      "version": "1.0.6",
+      "from": "@uirouter/angularjs@latest",
+      "resolved": "https://registry.npmjs.org/@uirouter/angularjs/-/angularjs-1.0.6.tgz"
+    },
+    "@uirouter/core": {
+      "version": "5.0.6",
+      "from": "@uirouter/core@5.0.6",
+      "resolved": "https://registry.npmjs.org/@uirouter/core/-/core-5.0.6.tgz"
+    },
     "accepts": {
       "version": "1.3.3",
       "from": "accepts@>=1.3.3 <1.4.0",
@@ -9,8 +19,20 @@
     },
     "angular": {
       "version": "1.6.5",
-      "from": "angular@1.6.5",
+      "from": "https://registry.npmjs.org/angular/-/angular-1.6.5.tgz",
       "resolved": "https://registry.npmjs.org/angular/-/angular-1.6.5.tgz"
+    },
+    "angular-ui-router": {
+      "version": "1.0.3",
+      "from": "https://registry.npmjs.org/angular-ui-router/-/angular-ui-router-1.0.3.tgz",
+      "resolved": "https://registry.npmjs.org/angular-ui-router/-/angular-ui-router-1.0.3.tgz",
+      "dependencies": {
+        "@uirouter/core": {
+          "version": "5.0.3",
+          "from": "@uirouter/core@5.0.3",
+          "resolved": "https://registry.npmjs.org/@uirouter/core/-/core-5.0.3.tgz"
+        }
+      }
     },
     "array-flatten": {
       "version": "1.1.1",

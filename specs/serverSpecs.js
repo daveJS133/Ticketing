@@ -1,12 +1,12 @@
 var request = require('supertest');
-var server = require('../server/server');
 var testEvent = require('./testEvent')
+var server = require('../server/server');
 
-describe('Accessing API', function () {
+describe('Server Accessing API', function () {
   it('Returns 200 status code', function (done) {
-    request(server)
-    .checkApi()
-    .expect(200, done);
+    
+    server.checkApi(true, true)
+    .expect(res.statusCode == '200', done);
   });
 
   it('Response returns ok', function (done) {

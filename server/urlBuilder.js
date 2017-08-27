@@ -25,7 +25,7 @@ function build (queries, isAuto, requestTime) {
   var hash = crypto.createHmac('sha1', privateKey)
   .update(path)
   .digest('hex');
-  console.log(hash);
+  console.log(path+'&signature='+hash);
   return path+'&signature='+hash;
 }
 
