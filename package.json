@@ -7,6 +7,7 @@
     "@uirouter/angularjs": "^1.0.6",
     "angular": "https://registry.npmjs.org/angular/-/angular-1.6.5.tgz",
     "angular-ui-router": "https://registry.npmjs.org/angular-ui-router/-/angular-ui-router-1.0.3.tgz",
+    "compression": "^1.7.0",
     "express": "^4.15.4",
     "hmacsha1": "^1.0.0",
     "mongo": "^0.1.0",

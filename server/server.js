@@ -6,8 +6,9 @@ const urlBuilder = require('./urlBuilder');
 const requestTime = require('./requestTime');
 let initial = true;
 const api =  require('./api');
+const compression = require('compression');
 
-
+server.use(compression());
 server.use('/api', api);
 
 checkExternal(true, initial);
