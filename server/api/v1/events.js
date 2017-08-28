@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const controller = require('server/contollers/events');
 
+//Injects route multiple functionalities in routes
 router.route('/')
 .get(contoller.list)
 .post(controller.new);

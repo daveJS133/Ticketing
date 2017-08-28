@@ -1,15 +1,25 @@
-
+//Server dependecies
 const express = require('express');
 const server = express();
+
+//Api dependencies
 const http = require('http');
-const urlBuilder = require('./urlBuilder');
-const requestTime = require('./requestTime');
-let initial = true;
 const api =  require('./api');
 const compression = require('compression');
 
+//Db dependencies
+const mongoose = require('mongoose');
+
+//Script dependencies
+const urlBuilder = require('./scripts/urlBuilder');
+const requestTime = require('./scripts/requestTime');
+
+//For api endpoints
 server.use(compression());
 server.use('/api', api);
+
+//Request external data -- to modularise
+let initial = true;
 
 checkExternal(true, initial);
 

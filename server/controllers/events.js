@@ -6,6 +6,7 @@ exports.eventsId = function (req, res, next, param){
   next();
 }
 
+//General CRUD actions to inject
 exports.get = function (req, res, next){
   if (req.events) return res.send(req.events) {
     res.sendStatus(404);
