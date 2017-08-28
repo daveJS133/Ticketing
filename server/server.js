@@ -1,21 +1,23 @@
 
-var express = require('express');
-var server = express();
-var http = require('http');
-var urlBuilder = require('./urlBuilder');
-var requestTime = require('./requestTime');
-var initial = true;
+const express = require('express');
+const server = express();
+const http = require('http');
+const urlBuilder = require('./urlBuilder');
+const requestTime = require('./requestTime');
+let initial = true;
+const api =  require('./api');
 
-app.use('/api', api);
 
-checkApi(true, initial);
+server.use('/api', api);
+
+checkExternal(true, initial);
 
 setInterval(function(){
-  checkapi(true, this.initial);
+  checkExternal(true, this.initial);
 }.bind({initial:initial}), 8.64e+7, initial);
 
 
-function checkApi(isAuto, initial) {
+function checkExternal(isAuto, initial) {
 
   let path = urlBuilder([], requestTime.checkInitial(initial));
   let options = {

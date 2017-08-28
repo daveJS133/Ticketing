@@ -1,6 +1,6 @@
+'use strict'
+
 const router = require('express').Router();
-const events = require('./events')
+router.use('/v1', require('./v1'));
 
-router.use('/events', events);
-
-module.exports = router
+module.exports = router;
