@@ -2,7 +2,7 @@
 node_modules
 
 #key file
-server/secretKey.js
+server/scripts/secretKey.js
 
 #database
 data
