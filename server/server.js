@@ -18,7 +18,17 @@ const checkExternal = require('./scripts/checkExt')
 server.use(compression());
 server.use('/api', api);
 
-//Request external data -- to modularise
+//Connect to mongo
+if(!mongoose.connection.db){
+  mongoose.connect('mongodb://localhost:27017/ticketdb')
+};
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'db connection error:'));
+db.once('open', console.log.bind(console, 'Connected to mongodb'));
+
+//Request external data
 let initial = true;
 
 checkExternal(true, initial);
