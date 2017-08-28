@@ -9,18 +9,18 @@ const compression = require('compression');
 
 //Db dependencies
 const mongoose = require('mongoose');
-
+const config = require('./config');
 //Script dependencies
 const urlBuilder = require('./scripts/urlBuilder');
 const requestTime = require('./scripts/requestTime');
-const checkExternal = require('./scripts/checkExt')
+const checkExternal = require('./scripts/checkExt');
 //For api endpoints
 server.use(compression());
 server.use('/api', api);
 
 //Connect to mongo
 if(!mongoose.connection.db){
-  mongoose.connect('mongodb://localhost:27017/ticketdb')
+  mongoose.connect(config.get('DB_URI'))
 };
 
 const db = mongoose.connection;

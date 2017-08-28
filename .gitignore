@@ -6,3 +6,4 @@ server/scripts/secretKey.js
 
 #database
 data
+.env.json
