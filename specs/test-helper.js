@@ -6,7 +6,7 @@ const config = require('../server/config');
 // Use test db
 const dbUrl = config.get('DB_URI')+'-test';
 
-config.set('DB_URI', dbURL);
+config.set('DB_URI', dbUrl);
 config.set('DEBUG', false);
 config.set('ENV', 'test');
 
@@ -16,5 +16,5 @@ exports.dropCollection = function(Model){
     return Model.remove({})
 };
 
-exports.server = require('server../server/server');
+exports.server = require('../server/server');
 

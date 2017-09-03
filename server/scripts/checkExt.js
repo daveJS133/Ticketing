@@ -1,3 +1,7 @@
+const urlBuilder = require('./urlBuilder')
+const requestTime = require('./requestTime')
+const http = require('http');
+
 function checkExternal(isAuto, initial) {
 
   let path = urlBuilder([], requestTime.checkInitial(initial));

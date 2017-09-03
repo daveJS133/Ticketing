@@ -10,13 +10,14 @@
     "bluebird": "https://registry.npmjs.org/bluebird/-/bluebird-2.10.2.tgz",
     "compression": "^1.7.0",
     "express": "^4.15.4",
-    "hmacsha1": "^1.0.0",
     "mongo": "^0.1.0",
     "mongoose": "https://registry.npmjs.org/mongoose/-/mongoose-4.11.6.tgz"
   },
   "devDependencies": {
     "mocha": "^3.5.0",
-    "supertest": "^3.0.0"
+    "nconf": "^0.8.4",
+    "supertest": "https://registry.npmjs.org/supertest/-/supertest-3.0.0.tgz",
+    "supertest-as-promised": "^4.0.2"
   },
   "scripts": {
     "test": "mocha -w ./** ./specs/**",

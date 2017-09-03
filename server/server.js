@@ -3,13 +3,14 @@ const express = require('express');
 const server = express();
 
 //Api dependencies
-const http = require('http');
+
 const api =  require('./api');
 const compression = require('compression');
 
 //Db dependencies
 const mongoose = require('mongoose');
 const config = require('./config');
+const bluebird = require('bluebird');
 //Script dependencies
 const urlBuilder = require('./scripts/urlBuilder');
 const requestTime = require('./scripts/requestTime');
@@ -19,6 +20,7 @@ server.use(compression());
 server.use('/api', api);
 
 //Connect to mongo
+mongoose.Promise = bluebird;
 if(!mongoose.connection.db){
   mongoose.connect(config.get('DB_URI'))
 };

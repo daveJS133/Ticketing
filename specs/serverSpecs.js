@@ -1,9 +1,30 @@
-const helper = require('./server/test-helper');
-const Event = require('./server/models/event');
-const request = require('supertest-as-promised')(helper.app);
+const helper = require('./test-helper');
+const Event = require('../server/models/event');
+const request = require('supertest')(helper.app);
 const testEvent = require('./testEvent')
 const server = require('../server/server');
 const URL = '/api/v1/events'
+
+describe('Server requesting external API', function () {
+  it('Returns 200 status code', function (done) {
+    request(server)
+    .checkExternal(true, true)
+    .expect(res.status == '200', done);
+  });
+
+  it('Response returns ok', function (done) {
+    request(server)
+    .checkExternal()
+    .expect('OK', done);
+  });
+
+    it('Returns JSON format', function (done) {
+      request(server)
+      .checkExternal()
+    .expect('Content-Type', /json/, done);
+  });
+});
+
 
 describe('Events', function () {
   let event
@@ -23,25 +44,6 @@ describe('Events', function () {
   });
 });
 
-describe('Server serving API', function () {
-  it('Returns 200 status code', function (done) {
-    request(server)
-    .checkExternal(true, true)
-    .expect(res.status == '200', done);
-  });
-
-  it('Response returns ok', function (done) {
-    request(server)
-    .checkExternal()
-    .expect('OK', done);
-  });
-
-    it('Returns JSON format', function (done) {
-      request(server)
-      .checkExternal()
-    .expect('Content-Type', /json/, done);
-  });
-});
 
 
   
