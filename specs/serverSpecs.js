@@ -4,12 +4,12 @@ const request = require('supertest')(helper.app);
 const testEvent = require('./testEvent')
 const server = require('../server/server');
 const URL = '/api/v1/events'
+var checkExt = require('../server/scripts/checkExt');
 
-describe('Server requesting external API', function () {
-  it('Returns 200 status code', function (done) {
-    request(server)
-    .checkExternal(true, true)
-    .expect(res.status == '200', done);
+describe('Server requesting external API', function (checkExt) {
+  it('Returns 200 status code', function (checkExt, done) {
+    checkExt.checkExternal(true, true)
+    .expect(200, done);
   });
 
   it('Response returns ok', function (done) {
