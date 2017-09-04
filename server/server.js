@@ -36,8 +36,8 @@ let initial = true;
 checkExternal(true, initial);
 
 setInterval(function(){
-  checkExternal(true, this.initial);
-}.bind({initial:initial}), 8.64e+7, initial);
+  checkExternal(true, false);
+}, 8.64e+7);
 
 module.exports = server;
 

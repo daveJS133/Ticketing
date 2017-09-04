@@ -21,6 +21,7 @@ function checkExternal(isAuto, initial) {
 
     res.on('end',() =>{
       var page = JSON.parse(body);
+      return page
     });
   }).end();
 };

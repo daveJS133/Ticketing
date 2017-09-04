@@ -19,7 +19,7 @@ function build (queries, isAuto, requestTime) {
     path+='&size=100';
   }
 
-  if(requestTime !== null){
+  if(requestTime !== undefined){
     path+= '&modified_from='+String(requestTime);
   };
   var hash = crypto.createHmac('sha1', privateKey)

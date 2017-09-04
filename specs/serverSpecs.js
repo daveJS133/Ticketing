@@ -4,12 +4,15 @@ const request = require('supertest')(helper.app);
 const testEvent = require('./testEvent')
 const server = require('../server/server');
 const URL = '/api/v1/events'
-var checkExt = require('../server/scripts/checkExt');
+let checkExternal = require('../server/scripts/checkExt');
+const assert = require('assert');
 
-describe('Server requesting external API', function (checkExt) {
-  it('Returns 200 status code', function (checkExt, done) {
-    checkExt.checkExternal(true, true)
+
+describe('Server requesting external API', function () {
+  it('Returns 200 status code', function (done) {
+    checkExternal(true, true)
     .expect(200, done);
+    done();
   });
 
   it('Response returns ok', function (done) {
@@ -18,10 +21,8 @@ describe('Server requesting external API', function (checkExt) {
     .expect('OK', done);
   });
 
-    it('Returns JSON format', function (done) {
-      request(server)
-      .checkExternal()
-    .expect('Content-Type', /json/, done);
+  it('Returns JSON format', function (done) {
+    assert.equal(typeof checkExternal(true, true), /json/, done);
   });
 });
 
@@ -46,6 +47,6 @@ describe('Events', function () {
 
 
 
-  
+
 
 

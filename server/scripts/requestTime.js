@@ -3,6 +3,7 @@
     initial = false;
     return undefined;
   }else{
+    console.log('this. timestamp =   ', this.getTimeStamp())
     return this.getTimeStamp();
   };
 
@@ -17,12 +18,14 @@ function pad(number) {
 
 exports.getTimeStamp = function(){
   let date = new Date()
-  return date.getUTCFullYear() +
+  dateString = date.getUTCFullYear() +
   '-' + pad(date.getUTCMonth() + 1) +
   '-' + pad(date.getUTCDate()) +
   '+' + pad(date.getUTCHours()) +
   ':' + pad(date.getUTCMinutes()) +
   ':' + pad(date.getUTCSeconds());
+  console.log(dateString);
+  return dateString
 }
 
 
