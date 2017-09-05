@@ -1,7 +1,7 @@
 var crypto = require('crypto');
 
 function build (queries, isAuto, requestTime) {
-  const secretKey = require('./secretKey');
+  const secretKey = require('../secretKey');
   const privateKey = String(
     Object.freeze(secretKey)
     );

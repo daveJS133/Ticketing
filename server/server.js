@@ -12,9 +12,9 @@ const mongoose = require('mongoose');
 const config = require('./config');
 const bluebird = require('bluebird');
 //Script dependencies
-const urlBuilder = require('./scripts/urlBuilder');
-const requestTime = require('./scripts/requestTime');
-const checkExternal = require('./scripts/checkExt');
+const urlBuilder = require('./scripts/externalReq/urlBuilder');
+const requestTime = require('./scripts/externalReq/requestTime');
+const checkExternal = require('./scripts/externalReq/checkExt');
 //For api endpoints
 server.use(compression());
 server.use('/api', api);
@@ -36,7 +36,7 @@ let initial = true;
 checkExternal(true, initial);
 
 setInterval(function(){
-  checkExternal(true, false);
+  checkExternal(true, false)
 }, 8.64e+7);
 
 module.exports = server;
